@@ -1,0 +1,66 @@
+#include <cassert>
+#include <iostream>
+
+#include "il.h"
+
+void fail(bool x) {
+  if (!x) {
+    std::cerr << "failed" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+}
+
+void testList(const IntList & l) {
+  fail(l.tail != NULL);
+  fail(l.tail->next == NULL);
+}
+
+void testList2(const IntList & l) {
+  fail(l.tail == NULL);
+}
+
+void testList3(const IntList & l) {
+  fail(l.tail->data != 66);
+  fail(l.head->data == 1);
+}
+
+int main() {
+  IntList l;
+  testList2(l);
+  l.addFront(10);
+  l.addFront(2);
+  l.addBack(11);
+  fail(l.getSize() == 3);
+  fail(l[2] == 11);
+  l.remove(10);
+  fail(l.getSize() == 2);
+  fail(l[1] == 11);
+  fail(!l.remove(5));
+  fail(l.find(2) == 0);
+  IntList l2(l);
+  IntList l3;
+  l3 = l;
+  fail(l3.getSize() == 2);
+  fail(l3[1] == 11);
+  fail(!l3.remove(5));
+  fail(l3.find(2) == 0);
+  fail(l2.getSize() == 2);
+  fail(l2[1] == 11);
+  fail(!l2.remove(5));
+  fail(l2.find(2) == 0);
+  l.addBack(55);
+  l.addBack(66);
+  l3 = l;
+  fail(l3.getSize() == 4);
+  fail(l3[1] == 11);
+  fail(!l3.remove(5));
+  fail(l3.find(2) == 0);
+  testList(l);
+  testList(l2);
+  testList(l3);
+  fail(l.remove(66));
+  fail(l.find(66) < 0);
+  fail(!l.remove(66));
+  l.addFront(1);
+  testList3(l);
+}

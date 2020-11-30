@@ -1,0 +1,11 @@
+animal:dragon
+animal:dragon
+animal:walrus
+place:cave
+adjective:peculiar
+adjective:scary
+adjective:peaceful
+:
+:random
+:panda:express
+$$$:_animal_

@@ -1,0 +1,66 @@
+#include <iostream>
+#include <sstream>
+
+class Expression {
+ public:
+  virtual std::string toString() const = 0;
+  virtual ~Expression() {}
+  virtual long evaluate() const = 0;
+};
+
+class NumExpression : public Expression {
+ private:
+  long num;
+
+ public:
+  NumExpression(long val) : num(val) {}
+  std::string toString() const {
+    std::stringstream ss;
+    ss << num;
+    return ss.str();
+  }
+  ~NumExpression() {}
+  long evaluate() const { return num; }
+};
+
+class BinaryExpression : public Expression {
+ private:
+  std::string repr;
+  Expression * lhs;
+  Expression * rhs;
+
+ public:
+  BinaryExpression(const char * str, Expression * l, Expression * r) :
+      repr(str),
+      lhs(l),
+      rhs(r) {}
+  std::string toString() const {
+    std::stringstream ss;
+    ss << "(" + lhs->toString() + " " + repr + " " + rhs->toString() + ")";
+    return ss.str();
+  }
+  ~BinaryExpression() {
+    delete lhs;
+    delete rhs;
+  }
+};
+
+class PlusExpression : public BinaryExpression {
+ public:
+  PlusExpression(Expression * l, Expression * r) : BinaryExpression("+", l, r) {}
+};
+
+class TimesExpression : public BinaryExpression {
+ public:
+  TimesExpression(Expression * l, Expression * r) : BinaryExpression("*", l, r) {}
+};
+
+class DivExpression : public BinaryExpression {
+ public:
+  DivExpression(Expression * l, Expression * r) : BinaryExpression("/", l, r) {}
+};
+
+class MinusExpression : public BinaryExpression {
+ public:
+  MinusExpression(Expression * l, Expression * r) : BinaryExpression("-", l, r) {}
+};

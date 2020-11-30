@@ -1,0 +1,25 @@
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+
+template<typename T>
+void read_into(std::string & s, T & stream) {
+  getline(stream, s);
+}
+
+template<typename T>
+void read_file(T & stream) {
+  std::string s;
+  std::vector<std::string> lines;
+  while (read_into<std::istream>(s, stream)) {
+  }
+}
+
+int main(int argc, char ** argv) {
+  std::string s;
+
+  //std::ifstream ifs(argv[1]);
+  std::istream * stream = argc > 1 ? new std::ifstream(argv[1]) : &(std::cin);
+}

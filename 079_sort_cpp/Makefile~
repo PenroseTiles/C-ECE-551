@@ -1,0 +1,2 @@
+myproject:
+	g++ -Wall -Werror -Wextra -g sortLines.cpp -o sortLines 

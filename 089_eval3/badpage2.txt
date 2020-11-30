@@ -1,0 +1,4 @@
+1 2:go amigo
+1: never
+#yes
+text

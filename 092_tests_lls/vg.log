@@ -1,0 +1,99 @@
+==81725== Memcheck, a memory error detector
+==81725== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==81725== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==81725== Command: ./test-lls
+==81725== Parent PID: 81724
+==81725== 
+==81725== Invalid read of size 8
+==81725==    at 0x109D82: IntList::operator[](int) (il9.cpp:86)
+==81725==    by 0x109521: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Address 0x5b7dce8 is 8 bytes inside a block of size 24 free'd
+==81725==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x10A177: IntList::~IntList() (il9.cpp:140)
+==81725==    by 0x10A122: IntList::operator=(IntList const&) (il9.cpp:129)
+==81725==    by 0x1094F4: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Block was alloc'd at
+==81725==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x109A2B: IntList::addFront(int const&) (il9.cpp:18)
+==81725==    by 0x10920A: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725== 
+==81725== Invalid read of size 4
+==81725==    at 0x109522: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Address 0x5b7dd40 is 0 bytes inside a block of size 24 free'd
+==81725==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x10A177: IntList::~IntList() (il9.cpp:140)
+==81725==    by 0x10A122: IntList::operator=(IntList const&) (il9.cpp:129)
+==81725==    by 0x1094F4: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Block was alloc'd at
+==81725==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x109AB9: IntList::addBack(int const&) (il9.cpp:30)
+==81725==    by 0x109227: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725== 
+==81725== Invalid read of size 4
+==81725==    at 0x109B4C: IntList::remove(int const&) (il9.cpp:43)
+==81725==    by 0x10954D: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Address 0x5b7dce0 is 0 bytes inside a block of size 24 free'd
+==81725==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x10A177: IntList::~IntList() (il9.cpp:140)
+==81725==    by 0x10A122: IntList::operator=(IntList const&) (il9.cpp:129)
+==81725==    by 0x1094F4: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Block was alloc'd at
+==81725==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x109A2B: IntList::addFront(int const&) (il9.cpp:18)
+==81725==    by 0x10920A: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725== 
+==81725== Invalid read of size 8
+==81725==    at 0x109C39: IntList::remove(int const&) (il9.cpp:69)
+==81725==    by 0x10954D: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Address 0x5b7dce8 is 8 bytes inside a block of size 24 free'd
+==81725==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x10A177: IntList::~IntList() (il9.cpp:140)
+==81725==    by 0x10A122: IntList::operator=(IntList const&) (il9.cpp:129)
+==81725==    by 0x1094F4: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Block was alloc'd at
+==81725==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x109A2B: IntList::addFront(int const&) (il9.cpp:18)
+==81725==    by 0x10920A: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725== 
+==81725== Invalid read of size 4
+==81725==    at 0x10A00B: IntList::find(int const&) (il9.cpp:112)
+==81725==    by 0x109574: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Address 0x5b7dce0 is 0 bytes inside a block of size 24 free'd
+==81725==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x10A177: IntList::~IntList() (il9.cpp:140)
+==81725==    by 0x10A122: IntList::operator=(IntList const&) (il9.cpp:129)
+==81725==    by 0x1094F4: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Block was alloc'd at
+==81725==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x109A2B: IntList::addFront(int const&) (il9.cpp:18)
+==81725==    by 0x10920A: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725== 
+==81725== Invalid read of size 8
+==81725==    at 0x108FE3: testList(IntList const&) (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==    by 0x10959E: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Address 0x5b7dce8 is 8 bytes inside a block of size 24 free'd
+==81725==    at 0x4C3123B: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x10A177: IntList::~IntList() (il9.cpp:140)
+==81725==    by 0x10A122: IntList::operator=(IntList const&) (il9.cpp:129)
+==81725==    by 0x1094F4: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725==  Block was alloc'd at
+==81725==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==81725==    by 0x109A2B: IntList::addFront(int const&) (il9.cpp:18)
+==81725==    by 0x10920A: main (in /home/ak565/ece551/092_tests_lls/test-lls)
+==81725== 
+==81725== 
+==81725== HEAP SUMMARY:
+==81725==     in use at exit: 48 bytes in 2 blocks
+==81725==   total heap usage: 6 allocs, 4 frees, 72,824 bytes allocated
+==81725== 
+==81725== LEAK SUMMARY:
+==81725==    definitely lost: 0 bytes in 0 blocks
+==81725==    indirectly lost: 0 bytes in 0 blocks
+==81725==      possibly lost: 0 bytes in 0 blocks
+==81725==    still reachable: 48 bytes in 2 blocks
+==81725==         suppressed: 0 bytes in 0 blocks
+==81725== Reachable blocks (those to which a pointer was found) are not shown.
+==81725== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==81725== 
+==81725== For counts of detected and suppressed errors, rerun with: -v
+==81725== ERROR SUMMARY: 8 errors from 6 contexts (suppressed: 0 from 0)

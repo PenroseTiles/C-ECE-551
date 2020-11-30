@@ -1,0 +1,99 @@
+#ifndef _BSTSET_H_
+#define _BSTSET_H_
+#include "set.h"
+
+template<typename T>
+class BstSet : public Set<T> {
+  class Node {
+    Node *left, *right;
+    T key;
+    Node(T k) : left(NULL), right(NULL), key(k) {}
+  };
+  Node * root;
+
+ public:
+  BstSet() : root(NULL) {}
+
+  void add(const T & key) {
+    if (root == NULL) {
+      root = new Node(key);
+      return;
+    }
+    Node ** current = &root;
+    while (*current) {
+      if ((*current)->key == key) {
+        return;
+      }
+      else if ((*current)->key > key) {
+        current = &(*current)->left;
+      }
+      else {
+        current = &(*current)->right;
+      }
+    }
+  }
+
+  virtual bool contains(const T & key) const {
+    const Node * current = root;
+    while (current) {
+      if (current->key == key) {
+        return true;
+      }
+      else if (key < current->key) {
+        current = current->left;
+      }
+      else {
+        current = current->right;
+      }
+    }
+    return false;
+  }
+
+  virtual void remove(const T & key) {
+    Node ** current = &root;
+    Node * temp;
+    while (*current) {
+      if (key < (*current)->key) {
+        current = &(*current)->left;
+      }
+      else if (key > (*current)->key) {
+        current = &(*current)->right;
+      }
+      else {
+        Node ** substitute = current;
+        //go right
+        substitute = &(*substitute)->right;
+        //keep going left
+        while ((*substitute)->left) {
+          substitute = &(*substitute)->left;
+        }
+        temp = substitute->right;
+        (*current)->key = (*substitute)->key;
+        delete *substitute;
+        *substitute = temp;
+        return;
+      }
+    }
+  }
+
+  void destroy(Node * node) {
+    if (node->left) {
+      destroy(node->left);
+      delete node->left;
+    }
+    if (node->right) {
+      destroy(node->right);
+      delete node->right;
+    }
+  }
+
+  BstSet(const BstSet & rhs) {}
+
+  virtual ~BstSet() {
+    if (root) {
+      destroy(root);
+      delete root;
+    }
+  }
+};
+#endif

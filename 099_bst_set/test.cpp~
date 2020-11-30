@@ -1,0 +1,7 @@
+#include <iostream>
+
+#include "bstset.h"
+
+int main() {
+  BstSet<int> s = new BstSet<int>();
+}

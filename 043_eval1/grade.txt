@@ -1,0 +1,194 @@
+Grading at 09/30/2020:18:51:35.084156
+For commit ID e960fbda0abefcca279ee8997edf81c7732e8ea7
+Grading at Wed Sep 30 14:51:17 EDT 2020
+
+Checking that your code compiles
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
+
+=========================================================================
+Step 1
+
++-----------------------------------------------------------------------+
+Test case 1
+Line entered by user is:
+ Drewistan50
+
+Correct format is country,population
+Your program did not indicate a failure case
+  Oh no! It printed to stdout instead of stderr
+  It did exit with a failure status though
+                                                         [1.5/3]
++-----------------------------------------------------------------------+
+Test case 2
+Name of country can be at most 64 characters longYour program did not indicate a failure case
+  Oh no! It printed to stdout instead of stderr
+  It did exit with a failure status though
+                                                         [1.0/2]
++-----------------------------------------------------------------------+
+Test case 3
+abc
+ is not a valid population
+input format is name,population
+population can only have numerical characters, no whitespace
+Your program did not indicate a failure case
+  Oh no! It printed to stdout instead of stderr
+  It did exit with a failure status though
+                                                         [1.0/2]
++-----------------------------------------------------------------------+
+Test case 4
+empty value entered for population
+Your program did not indicate a failure case
+  Oh no! It printed to stdout instead of stderr
+  It did exit with a failure status though
+                                                         [1.0/2]
++-----------------------------------------------------------------------+
+Test case 5
+5000000a
+ is not a valid population
+input format is name,population
+population can only have numerical characters, no whitespace
+Your program did not indicate a failure case
+  Oh no! It printed to stdout instead of stderr
+  It did exit with a failure status though
+                                                         [.5/1]
++-----------------------------------------------------------------------+
+Test case 6
+Your file matched the expected output
+                                                         [10/10]
++-----------------------------------------------------------------------+
+Test case 7
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 8
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 9
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 10
+Your file matched the expected output
+                                                         [1/1]
++-----------------------------------------------------------------------+
+Test case 11
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected ouput
+                                                         [0/1]
+
+Step 1 total                                             [24.0/30]
+
+=========================================================================
+Step 2
+
++-----------------------------------------------------------------------+
+Test case 12
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 13
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 14
+Line_1_did_not_match
+Your file did not match the expected ouput
+                                                         [0/2]
++-----------------------------------------------------------------------+
+Test case 15
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 16
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 17
+Your file matched the expected output
+                                                         [3/3]
+
+Step 2 total                                             [18/20]
+
+=========================================================================
+Step 3
+
++-----------------------------------------------------------------------+
+Test case 18
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 19
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 20
+Line_1_did_not_match
+Your file did not match the expected ouput
+                                                         [0/2]
++-----------------------------------------------------------------------+
+Test case 21
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 22
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 23
+Your file matched the expected output
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 24
+Your file matched the expected output
+                                                         [2/2]
+
+Step 3 total                                             [18/20]
+
+=========================================================================
+Step 4
+
++-----------------------------------------------------------------------+
+Test case 25
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 26
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 27
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 28
+Your file matched the expected output
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 29
+Your file matched the expected output
+                                                         [4/4]
+
+Step 4 total                                             [20/20]
+
+=========================================================================
+Code quality
+
+Abstration:    Excellent
+Naming:        Excellent
+Formatting:    Excellent
+Documentation: Good
+Comments from your grader:
+Great use of abstraction for validation. Recommend more than the README 
+instructions. Formatting is easy to follow. Variable and function names are 
+informative.
+Quality total                                            [9.6/10]
+
+=========================================================================
+
+Overall Grade: 90
